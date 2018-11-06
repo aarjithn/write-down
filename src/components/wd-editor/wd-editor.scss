@@ -1,0 +1,44 @@
+.layout-editor {
+  margin-top: 0 !important;
+  border: 1px solid #c8ccd0;
+  outline: none;
+  height: 220px;
+  overflow-y: auto;
+  background: #fff !important;
+}
+
+.codeblock {
+  display: block;
+  background: #f5f5f5;
+  padding: 5px 20px 0;
+  border-radius: 4px;
+}
+
+.token.strikethrough {
+  .textnode {
+    text-decoration: line-through;
+    text-shadow: none;
+  }
+}
+
+.token.h1 {
+  font-size: 2em;
+}
+.token.h2 {
+  font-size: 1.8em;
+}
+.token.h3 {
+  font-size: 1.6em;
+}
+.token.h4 {
+  font-size: 1.4em;
+}
+.token.h5 {
+  font-size: 1.2em;
+}
+.token.h6 {
+  font-size: 1em;
+}
+.token.heading .textnode {
+    font-weight: bold;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title>write-down</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <script src="/build/write-down.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/markdown-it@8.3.1/dist/markdown-it.min.js"></script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+        padding: 50px 30px;
+      }
+      .container {
+        display: flex;
+      }
+      .title {
+        font-size: 2em;
+        margin-bottom: 0;
+        font-weight: normal;
+      }
+      .subtitle {
+        margin-top: 5px;
+        margin-bottom: 80px;
+        font-weight: normal;
+      }
+      .panel {
+        width: 50%;
+      }
+      .editor {
+        width: 50%;
+      }
+      .preview {
+        width: 50%;
+        margin: 8px;
+        padding: 10px 20px;
+        background: #fafafa;
+        border-radius: 4px;
+      }
+    </style>
+</head>
+<body>
+  <h1 class="title">md-editor</h1>
+  <h4 class="subtitle">lightweight markdown editor</h4>
+  <div class="container">
+    <div class="panel editor">
+      <write-down first="Stencil"></write-down>
+    </div>
+    <div class="panel preview">
+      <div id="wd-output"></div>
+    </div>
+  </div>
+  <script>
+    const editorElement = document.querySelector('write-down');
+    var markdowned = window.markdownit();
+    editorElement.addEventListener('output', event => { 
+      document.getElementById('wd-output').innerHTML = markdowned.render(event.detail)
+    });
+  </script>
+
+</body>
+</html>
