@@ -9,6 +9,7 @@ export const config: Config = {
     },
     {
       type: 'www',
+      baseUrl: '/write-down',
       serviceWorker: null
     }
   ],

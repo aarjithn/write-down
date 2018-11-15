@@ -13,15 +13,16 @@
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "deploy": "gh-pages -d www"
   },
   "dependencies": {
-    "combokeys": "2.4.6",
     "undo-manager": "1.0.5"
   },
   "devDependencies": {
     "@stencil/core": "~0.14.1",
-    "@stencil/sass": "^0.1.1"
+    "@stencil/sass": "^0.1.1",
+    "gh-pages": "^2.0.1"
   },
   "repository": {
     "type": "git",
