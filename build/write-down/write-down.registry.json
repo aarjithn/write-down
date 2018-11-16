@@ -2,22 +2,22 @@
   "namespace": "WriteDown",
   "fsNamespace": "write-down",
   "loader": "../write-down.js",
-  "core": "write-down.7obzsea5.js",
-  "corePolyfilled": "write-down.xdzai3in.js",
+  "core": "write-down.1nioeogc.js",
+  "corePolyfilled": "write-down.rfxpabjz.js",
   "components": {
     "wd-editor": {
       "bundleIds": {
-        "$": "kiwgzt2p"
+        "$": "e6e5fars"
       }
     },
     "wd-toolbar": {
       "bundleIds": {
-        "$": "kiwgzt2p"
+        "$": "e6e5fars"
       }
     },
     "write-down": {
       "bundleIds": {
-        "$": "kiwgzt2p"
+        "$": "e6e5fars"
       }
     }
   }
