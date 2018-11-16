@@ -11,7 +11,6 @@ export const removeIfStartsWith = (s) => (line) => line.startsWith(s) ? line.sli
 export const defineNewLine = () => {
   let ta = document.createElement('textarea')
   ta.value = '\n'
-  console.log(ta.value);
   if (ta.value.length === 2)
     return '\r\n'
   else
@@ -138,7 +137,6 @@ export const autoIndent = (newLine, tab, prefix, selected, suffix) => {
     prefix += newLine + prevLine.match(leadingWhitespace)[0]
   // }
   selected = ''
-  console.log(prefix, newLine);
   if (suffix === '') suffix = newLine
   return { prefix, selected, suffix }
 }

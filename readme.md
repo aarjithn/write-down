@@ -4,14 +4,14 @@
 
 - No markdown library dependency - use your choice to render
 - No codemirror
-- Works with React, Vue, Angular, and Plain JS.
+- Works with React, Vue, Angular, <Your favourite library> and Plain JS.
 
 write-down is based on [Pagedown](https://github.com/StackExchange/pagedown), [Misbehave](https://github.com/orbitbot/misbehave) and [Prism.js](https://github.com/PrismJS/prism), and build using [Stencil](https://github.com/ionic-team/stencil)
 
 ## Why another markdown editor?
 
 * Draft.js, Quill.js outputs Richtext, not markdown
-* SimpleMDE is based on Codemirror, quite large in size
+* SimpleMDE, Editor.md are fullfledged editors based on Codemirror, quite large in size
 
 ## Adding to your project
 
@@ -25,7 +25,6 @@ write-down is based on [Pagedown](https://github.com/StackExchange/pagedown), [M
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ## Using this component
-
 
 ### Listening for output
 

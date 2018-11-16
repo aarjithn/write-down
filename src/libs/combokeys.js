@@ -13,7 +13,6 @@ export default class Combokeys {
   eventHandler(e) {
     const handlerIdx = this.findHandler(e.key, e.shiftKey, e.ctrlKey, e.metaKey);
     if (~handlerIdx) {
-      // console.log('found', this.handlers[handlerIdx])
       this.handlers[handlerIdx].callback(e);
     }
   }
