@@ -17,7 +17,7 @@ var defaultsStrings = {
   strikethroughexample: "strikethrough text",
 
   // math: "Math <math> Ctrl/Cmd+M",
-  mathexample: "Math equation",
+  mathexample: "e = mc^2",
 
   // inlinelink: "InlineLink <a> Ctrl/Cmd+I",
   inlinelinkbefore: "[",
@@ -556,7 +556,7 @@ commandProto.doBorI = function (chunk, postProcessing, nStars, insertText) {
   return;
 };
 
-commandProto.doStrikethrough = function (chunk, postProcessing) {
+commandProto.doStrikethrough = function (chunk) {
 
   // Get rid of whitespace and fixup newlines.
   chunk.trimWhitespace();
@@ -590,7 +590,7 @@ commandProto.doStrikethrough = function (chunk, postProcessing) {
   return;
 };
 
-commandProto.doMath = function (chunk, postProcessing) {
+commandProto.doMath = function (chunk) {
 
   // Get rid of whitespace and fixup newlines.
   chunk.trimWhitespace();
@@ -624,7 +624,7 @@ commandProto.doMath = function (chunk, postProcessing) {
   return;
 };
 
-commandProto.doLinkInline = function (chunk, postProcessing) {
+commandProto.doLinkInline = function (chunk) {
 
   chunk.trimWhitespace();
 
@@ -638,7 +638,7 @@ commandProto.doLinkInline = function (chunk, postProcessing) {
   return;
 };
 
-commandProto.doImageInline = function (chunk, postProcessing) {
+commandProto.doImageInline = function (chunk) {
 
   chunk.trimWhitespace();
 
@@ -875,7 +875,8 @@ commandProto.doList = function (chunk, postProcessing, isNumberedList) {
 
   // These are identical except at the very beginning and end.
   // Should probably use the regex extension function to make this clearer.
-  var previousItemsRegex = /(\n|^)(([ ]{0,3}([*+-]|\d+[.])[ \t]+.*)(\n.+|\n{2,}([*+-].*|\d+[.])[ \t]+.*|\n{2,}[ \t]+\S.*)*)\n*$/;
+  var previousItemsRegex = /(\n|^)([ ]{0,3}([*+-]|\d+[.])[ \t]+.*)$/;
+  // var previousItemsRegex = /(\n|^)(([ ]{0,3}([*+-]|\d+[.])[ \t]+.*)(\n.+|\n{2,}([*+-].*|\d+[.])[ \t]+.*|\n{2,}[ \t]+\S.*)*)\n*$/;
   var nextItemsRegex = /^\n*(([ ]{0,3}([*+-]|\d+[.])[ \t]+.*)(\n.+|\n{2,}([*+-].*|\d+[.])[ \t]+.*|\n{2,}[ \t]+\S.*)*)\n*/;
 
   // The default bullet is a dash but others are possible.

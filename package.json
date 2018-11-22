@@ -1,6 +1,6 @@
 {
   "name": "write-down",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A light weight Markdown Editor",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
@@ -14,6 +14,7 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d www"
   },
   "dependencies": {

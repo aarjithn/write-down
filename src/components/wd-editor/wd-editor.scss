@@ -5,6 +5,7 @@
   height: 220px;
   overflow-y: auto;
   background: #fff !important;
+  font-family: inherit !important;
 }
 
 .codeblock {
@@ -41,4 +42,7 @@
 }
 .token.heading .textnode {
     font-weight: bold;
+}
+.token.code, .token.codeblock {
+  font-family: 'Consolas', 'Ubuntu Mono', monospace;
 }

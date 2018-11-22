@@ -10,10 +10,6 @@ export function replaceBoldText(replacementText) {
 
 }
 
-// export function getSelection() {
-//     return window.getSelection();
-// }
-
 export function getSelectedRange() {
     let selection = window.getSelection();
     return selection.getRangeAt(0);

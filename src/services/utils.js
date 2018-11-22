@@ -124,18 +124,22 @@ export const autoIndent = (newLine, tab, prefix, selected, suffix) => {
   let prevLine = prefix.split(onNewLine).splice(-1)[0]
   let prefEnd = prefix.slice(-1)
   let suffStart = suffix.charAt(0)
+  let whitespace = prevLine.match(leadingWhitespace)[0]
 
-  // if ((prevLine.match(/\(/g) || []).length > (prevLine.match(/\)/g) || []).length) {
-  //   let whitespace = prevLine.match(leadingWhitespace)[0]
-  //   prefix += newLine + whitespace + prevLine.slice(whitespace.length, prevLine.lastIndexOf('(') + 1).replace(allCharacters, ' ')
-  // } else if (prefEnd === '{') {
-  //   prefix += newLine + prevLine.match(leadingWhitespace)[0] + tab
-  //   if (suffStart === '}')
-  //     suffix = newLine + prevLine.match(leadingWhitespace)[0] + suffix
-  // } else {
-    // if (prefEnd == newLine && suffix != newLine) prefix = prefix.slice(0,-1)
-    prefix += newLine + prevLine.match(leadingWhitespace)[0]
-  // }
+  // match list items
+  if (prevLine.match(/^[ ]{0,3}([*+-]|\d+[.])[ \t]+.*$/)) {
+    let match = prevLine.match(/^[ ]{0,3}([*+-]|\d+[.])[ \t]+.*$/)
+    prefix += newLine + whitespace
+    if (match[1].split('.').length == 2) {
+      let number = +match[1].split('.')[0]
+      number++
+      prefix += number + '. '
+    } else {
+      prefix += match[1] + ' '
+    }
+  } else {
+    prefix += newLine + whitespace
+  }
   selected = ''
   if (suffix === '') suffix = newLine
   return { prefix, selected, suffix }
@@ -161,7 +165,6 @@ export const autoIndent = (newLine, tab, prefix, selected, suffix) => {
 export const tabIndent = (newLine, tab, prefix, selected, suffix) => {
   let prefLines = prefix.split(onNewLine)
   let prevLine = prefLines.splice(-1)[0]
-
   if (selected === '') {
     if (tab === '\t' || prevLine.length % tab.length === 0) {
       prefix += tab

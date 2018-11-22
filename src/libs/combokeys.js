@@ -14,6 +14,7 @@ export default class Combokeys {
     const handlerIdx = this.findHandler(e.key, e.shiftKey, e.ctrlKey, e.metaKey);
     if (~handlerIdx) {
       this.handlers[handlerIdx].callback(e);
+      e.preventDefault();
     }
   }
 

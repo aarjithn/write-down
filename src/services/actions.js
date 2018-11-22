@@ -39,8 +39,7 @@ export const actions = {
     shortcut: 'M'
   },
   'table': {
-    description: `Table`,
-    shortcut: 'T'
+    description: `Table`
   },
   'link': {
     description: `Link`,
